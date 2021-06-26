@@ -13,7 +13,7 @@
 
       <ng-template #elseBlock>
         <!-- edit state of member -->
-        <input #updatedName (keyup.enter)="save(updatedName.value, member)" value="{{member.name}}"/>
+        <input #updatedName (keyup.enter)="save(updatedName.value, member)" [value]="member.name"/>
         <button (click)="save(updatedName.value, member)">save</button>
       </ng-template>
 
@@ -21,4 +21,4 @@
 </ul>
 <input #name type="text"/>
 <label>First mission<input #firstMission type="checkbox"/></label>
-<button (click)="add(name.value, firstMission.checked)">Add</button>
+<button (click)="add(name.value, firstMission.checked); name.value =''">Add</button>

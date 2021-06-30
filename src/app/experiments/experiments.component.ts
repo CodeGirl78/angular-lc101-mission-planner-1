@@ -14,7 +14,7 @@ export class ExperimentsComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   allExp(){
     let names = [];
     for(let i=0; i<this.experiments.length; i++){
@@ -23,7 +23,7 @@ export class ExperimentsComponent implements OnInit {
   }
 
   /**Bonus Mission Part 5 */
-  addEquip(exp){
+  addExp(exp){
     let object = {name: "", editingExp: false};
     object.name = exp;
     if(!this.allExp().includes(exp)){
@@ -32,12 +32,12 @@ export class ExperimentsComponent implements OnInit {
   }
 
   /**Bonus Mission Part 7 */
-  removeEquip(exp){
+  removeExp(exp){
     this.experiments.splice(this.experiments.indexOf(exp), 1)
   }
 
   /**Bonus Mission Part 6 */
-  updateEquip(newName:string, item) {
+  updateExp(newName:string, item) {
     this.experiments[this.experiments.indexOf(item)]["name"] = newName;
     item.editingExp = false;
   }

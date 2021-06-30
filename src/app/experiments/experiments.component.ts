@@ -8,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class ExperimentsComponent implements OnInit {
 
   experiments = [{name:"Mars soil sample", editingExp: false}, {name:"Plant growth in habitat", editingExp: false},
-  {name:"Human bone density", editingExp: false}];
+                {name:"Human bone density", editingExp: false}];
 
   constructor() { }
 
   ngOnInit() {
   }
-
+  
   allExp(){
     let names = [];
     for(let i=0; i<this.experiments.length; i++){

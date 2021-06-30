@@ -1,20 +1,20 @@
 <h3>Equipment</h3>
 <ul>
-  <li *ngFor="let item of equipmentItems">
-<!--Bonus Mission Part 3-->
-    <span *ngIf="equipmentBeingEdited !== equipment; else elseBlock">
-    <span (click)="edit(equipment)" class="editable-text">{{equipment.items}}</span>
-    <!--Bonus Mission Part 4-->
-    <button (click)="remove(equipment)">remove</button>
-      
-    <ng-template #elseBlock>
-      <!-- edit state of equipment -->
-      <input #updatedEquipment (keyup.enter)="save(updatedEquipment.value, equipment)" [value]="equipment.items"/>
-      <button (click)="save(updatedEquipment.value, equipment)">save</button>
+  <li *ngFor="let item of equipment">
+    <!--Bonus Mission Part 3-->
+    <span *ngIf="!item.editingEquipment; else editEquipmentBlock">
+      <span class="editable-text" (click)="item.editingEquipment = true;">{{item.name}}</span>
+    </span>
+    <ng-template #editEquipmentBlock>
+      <input #newEquip value="{{item.name}}"/>
+      <button (click)="updateEquip(newEquip.value, item)">save</button>
     </ng-template>
-
+        <!--Bonus Mission Part 4-->
+        <button class="remove" (click)="removeEquip(item)">remove</button>
   </li>
 </ul>
 <!--Bonus Mission Part 2-->
-<input #equipment type="text"/>
-<button (click)="add(equipment.value); equipment.value =''">Add</button>
+<div>
+  <input #equipName type="text"  placeholder="enter equipment"/>
+  <button (click)="addEquip(equipName.value)">add</button>
+</div>

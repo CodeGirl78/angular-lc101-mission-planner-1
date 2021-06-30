@@ -10,11 +10,12 @@
       <button (click)="updateExp(newExp.value, item)">save</button>
     </ng-template>
         <!--Bonus Mission Part 7-->
-        <button class="remove" (click)="removeExp(item)">remove</button></li>
+        <button class="remove" (click)="removeExp(item)">remove</button>
+  </li>
 </ul>
 
 <!--Bonus Mission Part 5-->
-<div>
+<div class="enter">
   <input #expName type="text"  placeholder="enter experiment"/>
   <button (click)="addExp(expName.value)">add</button>
 </div>

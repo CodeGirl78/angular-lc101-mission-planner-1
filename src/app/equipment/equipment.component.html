@@ -19,8 +19,8 @@
         <li *ngFor="let equipment of cargoHold">{{equipment.name}}</li>
     </ol>
     <p>Mass in Hold: {{cargoMass}} kg</p>
-    <p [class.nearMaxMass]="redStat">Mass Budget Remaining: {{maximumAllowedMass-cargoMass}} kg</p>
+    <p [class.nearMaxMass]="nearCapacity">Mass Budget Remaining: {{maximumAllowedMass - cargoMass}} kg</p>
     <!--Empty Hold" button here. -->
-    <button (click)="emptyArray()">Empty Hold</button>
+    <button (click)="cargoHold=[]; cargoMass=0; nearCapacity = false">Empty Hold</button>
 </div>
 

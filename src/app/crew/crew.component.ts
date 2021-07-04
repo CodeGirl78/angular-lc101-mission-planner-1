@@ -35,5 +35,5 @@ export class CrewComponent implements OnInit {
       this.crew.splice(this.crew.indexOf(candidate), 1);
       candidate.selec = false;
     }
-  
+  }
 }

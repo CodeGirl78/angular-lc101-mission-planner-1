@@ -6,20 +6,32 @@
 button {
     margin: 2px;
     cursor: pointer;
+    width: auto;
 }
 
-h3 {
+h3{
     text-align: center;
+    border: 0.5px grey solid;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: white;
 }
 
-/* Add an 'active' class to style the background of the 'Add to Cargo Hold' buttons. */
-.active {
-    background: gold;
+/* 'active' class to style the background of the 'Add to Cargo Hold' buttons: */
+
+.active{
+    background-color: gold;
+    margin: 2px;
+    cursor: pointer;
 }
 
-/* Add the 'nearMaxMass' class style here: */
-.nearMaxMass {
+/* 'nearMaxMass' class style here: */
+.nearMaxMass{
     font-weight: bold;
     font-style: italic;
-    color:red;
+    color: red;
 }
+
+/* #txt-size{
+    font-size: 2vw;
+} */

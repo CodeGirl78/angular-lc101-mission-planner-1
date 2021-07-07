@@ -4,7 +4,10 @@
 
 h2 {
     text-align: center;
-    color: brown;
+    color: rgb(202, 5, 136);
+    border: 0.5px grey dashed;
+    padding: 5px;
+    background-color: rgb(118, 138, 190);
 }
 
 h1 {

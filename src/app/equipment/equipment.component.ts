@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 	  templateUrl: './equipment.component.html',
 	  styleUrls: ['./equipment.component.css']
 	})
+	
 	export class EquipmentComponent implements OnInit {
 	   equipmentItems: object[] = [
 	       {name: 'Duct Tape', mass: 0.5, inactive: false, remove:true},
@@ -39,8 +40,8 @@ import { Component, OnInit } from '@angular/core';
 	         this.redStat = true;
 	       }
 	    }
-	
-	  }
+	}
+
 	  disab = ()=>{
 	    for(let i=0; i<this.equipmentItems.length; i++){
 	      if(this.cargoHold.includes(this.equipmentItems[i])){
@@ -60,6 +61,7 @@ import { Component, OnInit } from '@angular/core';
 	      }
 	    } 
 	  }
+
 	  emptyArr = () => {
 	    this.cargoHold= [];
 	    this.cargoMass= 0;
@@ -68,12 +70,14 @@ import { Component, OnInit } from '@angular/core';
 	      this.equipmentItems[i]["inactive"] = false;
 	    }
 	  }
+
 	  removeItem = (item) => {
 	    if(this.cargoHold.includes(item)){
 	      this.cargoHold.splice(this.cargoHold.indexOf(item), 1);
 	      this.cargoMass -= item.mass;
 	    }
 	  }
+
 	  // disabRemove = ()=>{
 	  //   for(let i=0; i<this.equipmentItems.length; i++){
 	  //     if(this.cargoMass - this.equipmentItems[i]["mass"] < 0 || !this.cargoHold.includes(this.equipmentItems[i])){

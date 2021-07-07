@@ -1,39 +1,49 @@
 import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-crew',
-  templateUrl: './crew.component.html',
-  styleUrls: ['./crew.component.css']
-})
-export class CrewComponent implements OnInit {
-
-  inCrew: boolean = false;
-  crew: object[] = [];
-
-  candidates: object[] = [
-    {name: "Sally Ride", photo: 'https://handlers.education.launchcode.org/static/images/sally-ride.jpg'},
-    {name: "Mae Jemison", photo: 'https://handlers.education.launchcode.org/static/images/mae-jemison.jpg'},
-    {name: "Ellen Ochoa", photo: 'https://handlers.education.launchcode.org/static/images/ellen-ochoa.jpg'},
-    {name: "Frederick Gregory", photo: 'https://handlers.education.launchcode.org/static/images/frederick-gregory.jpg'},
-    {name: "Guion Bluford", photo: 'https://handlers.education.launchcode.org/static/images/guion-bluford.jpg'},
-    {name: "Kjell Lindgren", photo: 'https://handlers.education.launchcode.org/static/images/kjell-lindgren.jpg'},
-    {name: "Jeanette Epps", photo: 'https://handlers.education.launchcode.org/static/images/jeanette-epps.jpg'}
-  ];
-
-  constructor() { }
-
-  ngOnInit() { }
-
-  // Code the 'addCrewMember' function here:
-  addCrewMember = (candidate) => {
-    if(!this.crew.includes(candidate)){
-      if(this.crew.length < 3){
-        this.crew.push(candidate);
-        candidate.selec = true;
-      }
-    } else{
-      this.crew.splice(this.crew.indexOf(candidate), 1);
-      candidate.selec = false;
+	
+	@Component({
+	  selector: 'app-crew',
+	  templateUrl: './crew.component.html',
+	  styleUrls: ['./crew.component.css']
+	})
+	export class CrewComponent implements OnInit {
+	
+	  inCrew: boolean = false;
+	  crew: object[] = [];
+	  crewStat:string = "FULL";
+	
+	  candidates: object[] = [
+	    {name: "Sally Ride", nickname: "Nickname: Sal", photo: 'https://handlers.education.launchcode.org/static/images/sally-ride.jpg', selec: false, imgSelec: false, mouseov: false},
+	    {name: "Mae Jemison",nickname: "Nickname: MaeJ", photo: 'https://handlers.education.launchcode.org/static/images/mae-jemison.jpg', selec: false, imgSelec: false, mouseov: false},
+	    {name: "Ellen Ochoa", nickname: "Nickname: Eloa", photo:'https://handlers.education.launchcode.org/static/images/ellen-ochoa.jpg', selec: false, imgSelec: false, mouseov: false},
+	    {name: "Frederick Gregory", nickname: "Nickname: Fred", photo: 'https://handlers.education.launchcode.org/static/images/frederick-gregory.jpg', selec: false, imgSelec: false, mouseov: false},
+	    {name: "Guion Bluford", nickname: "Nickname: G", photo: 'https://handlers.education.launchcode.org/static/images/guion-bluford.jpg', selec: false, imgSelec: false, mouseov: false},
+	    {name: "Kjell Lindgren", nickname: "Nickname: Kj", photo: 'https://handlers.education.launchcode.org/static/images/kjell-lindgren.jpg', selec: false, imgSelec: false, mouseov: false},
+	    {name: "Jeanette Epps", nickname: "Nickname: Jean", photo: 'https://handlers.education.launchcode.org/static/images/jeanette-epps.jpg', selec: false, imgSelec: false, mouseov: false}
+	  ];
+	
+	  constructor() { }
+	
+	  ngOnInit() { }
+	
+	  // 'addCrewMember' function here:
+	  addCrewMember = (candidate) => {
+	    if(!this.crew.includes(candidate)) {
+	      if(this.crew.length < 3) {
+	        this.crew.push(candidate);
+	        candidate.selec = true;
+	    }
+	  } else {
+	      this.crew.splice(this.crew.indexOf(candidate), 1);
+	      candidate.selec = false;
+	    }
     }
-  }
-}
+	
+	  pointerOver = (candidate) => {
+	    candidate.mouseov = true;
+	  }
+
+	  pointerOut = (candidate) => {
+	    candidate.mouseov = false;
+	  }
+	
+	}
